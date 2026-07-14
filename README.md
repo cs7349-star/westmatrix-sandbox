@@ -43,8 +43,8 @@ cp .env.example .env
 Then edit `.env` and add your free keys:
 
 ```env
-FRED_API_KEY=your_fred_api_key_here
-ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key_here
+FRED_API_KEY=b173556aee1710d182c3ddde9eeb6b99
+ALPHA_VANTAGE_API_KEY=UOSPZCUL2J34FD2V
 ```
 
 Yahoo Finance is tested using the `yfinance` Python package and does not require an API key for this connectivity test.
