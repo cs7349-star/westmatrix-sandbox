@@ -1,20 +1,78 @@
 # West Matrix Local Sandbox
 
-This repository sets up a clean Python sandbox for connecting to external financial and macroeconomic data sources without using any internal production database.
+This repository sets up a clean local Python sandbox for connecting to external financial and macroeconomic data sources, normalizing the raw API responses, and exporting standardized output files that can be consumed by downstream applications or AI models.
 
-## What this includes
+The project uses only external public data sources and does not connect to any internal production database.
 
-- Python virtual environment workflow
-- Optional Docker workflow
-- `requirements.txt` with required packages
-- `.env.example` for API-key configuration
-- `verify_connectivity.py` to test:
-  - FRED macroeconomic data API
-  - Yahoo Finance market data through `yfinance`
-  - Alpha Vantage market data API
-- Standard JSON output showing whether each connection succeeded
+## Project structure
 
-## 1. Create the local Python environment
+```text
+westmatrix-sandbox/
+├── verify_connectivity.py          # Phase 1: API connectivity test
+├── data_standardization.py         # Phase 2: normalization + financial snapshot pipeline
+├── requirements.txt                # Python dependencies
+├── Dockerfile                      # Optional containerized run
+├── .env.example                    # Example environment variables, no real keys
+├── .gitignore                      # Prevents .env and virtual env files from being committed
+├── writeup.md                      # Brief 1-2 page project explanation
+└── output/
+    ├── standardized_data.json      # Sample standardized JSON output
+    ├── standardized_data.csv       # Sample standardized CSV output
+    ├── financial_snapshot.json     # Sample company + macro snapshot JSON
+    └── financial_snapshot.csv      # Sample company + macro snapshot CSV
+```
+
+## Data sources
+
+The pipeline standardizes data from three external providers:
+
+1. **FRED**
+   - Gross Domestic Product (`GDP`)
+   - Consumer Price Index (`CPIAUCSL`)
+   - Unemployment Rate (`UNRATE`)
+2. **Yahoo Finance**
+   - Current stock price
+   - Previous close
+   - Market capitalization
+   - 52-week high and low
+3. **Alpha Vantage**
+   - Latest trading price
+   - Previous close
+   - Trading volume
+
+The sample financial snapshot uses **NVIDIA Corporation (`NVDA`)**.
+
+## Common JSON schema
+
+Each normalized observation uses this schema:
+
+```json
+{
+  "data_source": "FRED",
+  "timestamp": "2026-01-01",
+  "symbol": "GDP",
+  "metric_name": "Gross Domestic Product",
+  "metric_value": 31865.721,
+  "units": "Billions of Dollars, Seasonally Adjusted Annual Rate",
+  "frequency": "quarterly"
+}
+```
+
+### Schema fields
+
+| Field | Description |
+|---|---|
+| `data_source` | Source provider, such as FRED, Yahoo Finance, or Alpha Vantage |
+| `timestamp` | Observation date or timestamp from the provider |
+| `symbol` | Stock ticker or economic series ID |
+| `metric_name` | Human-readable name of the metric |
+| `metric_value` | Numeric value after conversion |
+| `units` | Unit of measurement, such as USD or Percent |
+| `frequency` | Data frequency, such as daily, monthly, or quarterly |
+
+## Setup instructions
+
+Create and activate a local Python virtual environment:
 
 ```bash
 python3 -m venv .venv
@@ -32,7 +90,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## 2. Add API keys
+## Add API keys
 
 Copy the example environment file:
 
@@ -40,55 +98,43 @@ Copy the example environment file:
 cp .env.example .env
 ```
 
-Then edit `.env` and add your free keys:
+Then edit `.env` and add your own keys:
 
 ```env
-FRED_API_KEY=b173556aee1710d182c3ddde9eeb6b99
-ALPHA_VANTAGE_API_KEY=UOSPZCUL2J34FD2V
+FRED_API_KEY=your_fred_api_key_here
+ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key_here
 ```
 
-Yahoo Finance is tested using the `yfinance` Python package and does not require an API key for this connectivity test.
+Do **not** commit `.env` to GitHub. The `.gitignore` file is included to prevent that.
 
-## 3. Run the verification script
+## Run Phase 1: connectivity test
 
 ```bash
 python verify_connectivity.py
 ```
 
-Expected output format:
+This prints a JSON status report showing whether FRED, Yahoo Finance, and Alpha Vantage are reachable.
 
-```json
-{
-  "environment": {
-    "python_version": "3.x.x",
-    "timestamp_utc": "..."
-  },
-  "checks": {
-    "fred": {
-      "status": "success",
-      "series_id": "GDP",
-      "latest_observation": {
-        "date": "...",
-        "value": "..."
-      }
-    },
-    "yahoo_finance": {
-      "status": "success",
-      "symbol": "MSFT",
-      "latest_close": 123.45
-    },
-    "alpha_vantage": {
-      "status": "success",
-      "symbol": "IBM",
-      "price": "..."
-    }
-  }
-}
+## Run Phase 2: data standardization and financial snapshot
+
+```bash
+python data_standardization.py
 ```
 
-If an API key is missing or invalid, the script prints a clear JSON error for that service instead of crashing.
+This generates or refreshes the following files:
 
-## 4. Optional Docker run
+```text
+output/standardized_data.json
+output/standardized_data.csv
+output/financial_snapshot.json
+output/financial_snapshot.csv
+```
+
+## Example outputs
+
+The repository includes sample output files in the `output/` folder. These files demonstrate the normalized schema and the NVIDIA financial snapshot format.
+
+## Optional Docker run
 
 Build the image:
 
@@ -102,21 +148,6 @@ Run it with your `.env` file:
 docker run --rm --env-file .env westmatrix-sandbox
 ```
 
-## GitHub submission suggestion
+## Notes
 
-After testing locally:
-
-```bash
-git init
-git add .
-git commit -m "Initialize West Matrix sandbox environment"
-```
-
-Then create a GitHub repository and push the files.
-
-## Files to submit
-
-- GitHub repository link
-- `verify_connectivity.py`
-- `requirements.txt`
-- Screenshot or copied JSON output from running `python verify_connectivity.py`
+Yahoo Finance can sometimes return a temporary rate-limit error. The script catches this and continues with the other data sources when possible. FRED and Alpha Vantage require valid local API keys.
