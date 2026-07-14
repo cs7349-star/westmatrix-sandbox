@@ -1,0 +1,36 @@
+{
+  "company": "NVIDIA Corporation",
+  "symbol": "NVDA",
+  "generated_at_utc": "2026-07-14T02:55:00+00:00",
+  "market_data": {
+    "current_stock_price_usd": 203.53,
+    "previous_close_usd": 210.87,
+    "market_cap_usd": 4964300230000,
+    "fifty_two_week_high_usd": 236.54,
+    "fifty_two_week_low_usd": 162.02
+  },
+  "macro_data": {
+    "gdp": {
+      "series_id": "GDP",
+      "value": 31865.721,
+      "date": "2026-01-01",
+      "units": "Billions of Dollars, Seasonally Adjusted Annual Rate",
+      "frequency": "quarterly"
+    },
+    "cpi": {
+      "series_id": "CPIAUCSL",
+      "value": 333.979,
+      "date": "2026-05-01",
+      "units": "Index 1982-1984=100, Seasonally Adjusted",
+      "frequency": "monthly"
+    },
+    "unemployment_rate": {
+      "series_id": "UNRATE",
+      "value": 4.2,
+      "date": "2026-06-01",
+      "units": "Percent, Seasonally Adjusted",
+      "frequency": "monthly"
+    }
+  },
+  "notes": "Sample output for the West Matrix data standardization assignment. Running data_standardization.py will refresh the values using the user's API keys and current available market data."
+}

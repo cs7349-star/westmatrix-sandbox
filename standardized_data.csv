@@ -1,0 +1,10 @@
+data_source,timestamp,symbol,metric_name,metric_value,units,frequency
+Yahoo Finance,2026-07-14T00:15:00+00:00,NVDA,Current Stock Price,203.53,USD,daily
+Yahoo Finance,2026-07-14T00:15:00+00:00,NVDA,Previous Close,210.87,USD,daily
+Yahoo Finance,2026-07-14T00:15:00+00:00,NVDA,Market Capitalization,4964300230000,USD,daily
+Yahoo Finance,2026-07-14T00:15:00+00:00,NVDA,52 Week High,236.54,USD,daily
+Yahoo Finance,2026-07-14T00:15:00+00:00,NVDA,52 Week Low,162.02,USD,daily
+Alpha Vantage,2026-07-14T00:15:00+00:00,NVDA,Latest Trading Price,203.53,USD,daily
+FRED,2026-01-01,GDP,Gross Domestic Product,31865.721,"Billions of Dollars, Seasonally Adjusted Annual Rate",quarterly
+FRED,2026-05-01,CPIAUCSL,Consumer Price Index for All Urban Consumers,333.979,"Index 1982-1984=100, Seasonally Adjusted",monthly
+FRED,2026-06-01,UNRATE,Unemployment Rate,4.2,"Percent, Seasonally Adjusted",monthly

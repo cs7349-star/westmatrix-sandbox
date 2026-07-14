@@ -1,0 +1,11 @@
+section,metric,value,units,date_or_timestamp,source_symbol
+company,company,NVIDIA Corporation,,,NVDA
+company,symbol,NVDA,,,NVDA
+market,current_stock_price,203.53,USD,2026-07-14T00:15:00+00:00,NVDA
+market,previous_close,210.87,USD,2026-07-14T00:15:00+00:00,NVDA
+market,market_cap,4964300230000,USD,2026-07-14T00:15:00+00:00,NVDA
+market,52_week_high,236.54,USD,2026-07-14T00:15:00+00:00,NVDA
+market,52_week_low,162.02,USD,2026-07-14T00:15:00+00:00,NVDA
+macro,gdp,31865.721,"Billions of Dollars, Seasonally Adjusted Annual Rate",2026-01-01,GDP
+macro,cpi,333.979,"Index 1982-1984=100, Seasonally Adjusted",2026-05-01,CPIAUCSL
+macro,unemployment_rate,4.2,"Percent, Seasonally Adjusted",2026-06-01,UNRATE

@@ -1,0 +1,83 @@
+[
+  {
+    "data_source": "Yahoo Finance",
+    "timestamp": "2026-07-14T00:15:00+00:00",
+    "symbol": "NVDA",
+    "metric_name": "Current Stock Price",
+    "metric_value": 203.53,
+    "units": "USD",
+    "frequency": "daily"
+  },
+  {
+    "data_source": "Yahoo Finance",
+    "timestamp": "2026-07-14T00:15:00+00:00",
+    "symbol": "NVDA",
+    "metric_name": "Previous Close",
+    "metric_value": 210.87,
+    "units": "USD",
+    "frequency": "daily"
+  },
+  {
+    "data_source": "Yahoo Finance",
+    "timestamp": "2026-07-14T00:15:00+00:00",
+    "symbol": "NVDA",
+    "metric_name": "Market Capitalization",
+    "metric_value": 4964300230000,
+    "units": "USD",
+    "frequency": "daily"
+  },
+  {
+    "data_source": "Yahoo Finance",
+    "timestamp": "2026-07-14T00:15:00+00:00",
+    "symbol": "NVDA",
+    "metric_name": "52 Week High",
+    "metric_value": 236.54,
+    "units": "USD",
+    "frequency": "daily"
+  },
+  {
+    "data_source": "Yahoo Finance",
+    "timestamp": "2026-07-14T00:15:00+00:00",
+    "symbol": "NVDA",
+    "metric_name": "52 Week Low",
+    "metric_value": 162.02,
+    "units": "USD",
+    "frequency": "daily"
+  },
+  {
+    "data_source": "Alpha Vantage",
+    "timestamp": "2026-07-14T00:15:00+00:00",
+    "symbol": "NVDA",
+    "metric_name": "Latest Trading Price",
+    "metric_value": 203.53,
+    "units": "USD",
+    "frequency": "daily"
+  },
+  {
+    "data_source": "FRED",
+    "timestamp": "2026-01-01",
+    "symbol": "GDP",
+    "metric_name": "Gross Domestic Product",
+    "metric_value": 31865.721,
+    "units": "Billions of Dollars, Seasonally Adjusted Annual Rate",
+    "frequency": "quarterly"
+  },
+  {
+    "data_source": "FRED",
+    "timestamp": "2026-05-01",
+    "symbol": "CPIAUCSL",
+    "metric_name": "Consumer Price Index for All Urban Consumers",
+    "metric_value": 333.979,
+    "units": "Index 1982-1984=100, Seasonally Adjusted",
+    "frequency": "monthly"
+  },
+  {
+    "data_source": "FRED",
+    "timestamp": "2026-06-01",
+    "symbol": "UNRATE",
+    "metric_name": "Unemployment Rate",
+    "metric_value": 4.2,
+    "units": "Percent, Seasonally Adjusted",
+    "frequency": "monthly"
+  }
+]
