@@ -1,0 +1,22 @@
+{
+  "tickers": ["NVDA", "AAPL", "MSFT"],
+  "fred_series": {
+    "GDP": {
+      "metric_name": "Gross Domestic Product",
+      "units": "Billions of Dollars",
+      "frequency": "quarterly"
+    },
+    "CPIAUCSL": {
+      "metric_name": "Consumer Price Index",
+      "units": "Index 1982-1984=100",
+      "frequency": "monthly"
+    },
+    "UNRATE": {
+      "metric_name": "Unemployment Rate",
+      "units": "Percent",
+      "frequency": "monthly"
+    }
+  },
+  "output_folder": "output",
+  "tolerance_pct": 2.0
+}

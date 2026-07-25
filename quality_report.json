@@ -1,0 +1,60 @@
+{
+  "overall_status": "Warning",
+  "record_count": 24,
+  "issue_count": 1,
+  "issues": [
+    {
+      "symbol": "CPIAUCSL",
+      "issues": [
+        "provider_price_difference"
+      ],
+      "comparison": {
+        "yahoo_price": null,
+        "alpha_vantage_price": null,
+        "difference_pct": null,
+        "tolerance_pct": 2.0,
+        "status": "Warning"
+      }
+    }
+  ],
+  "provider_price_comparison": {
+    "NVDA": {
+      "yahoo_price": 171.3,
+      "alpha_vantage_price": 171.05,
+      "difference_pct": 0.14594279042615294,
+      "tolerance_pct": 2.0,
+      "status": "Pass"
+    },
+    "AAPL": {
+      "yahoo_price": 213.88,
+      "alpha_vantage_price": 214.1,
+      "difference_pct": 0.10286141761735498,
+      "tolerance_pct": 2.0,
+      "status": "Pass"
+    },
+    "MSFT": {
+      "yahoo_price": 510.12,
+      "alpha_vantage_price": 509.7,
+      "difference_pct": 0.0823335685721038,
+      "tolerance_pct": 2.0,
+      "status": "Pass"
+    },
+    "CPIAUCSL": {
+      "yahoo_price": null,
+      "alpha_vantage_price": null,
+      "difference_pct": null,
+      "tolerance_pct": 2.0,
+      "status": "Warning"
+    }
+  },
+  "status_by_source": {
+    "FRED": "Pass",
+    "Yahoo Finance": "Pass",
+    "Alpha Vantage": "Pass"
+  },
+  "rules": {
+    "Pass": "No required-field, numeric, freshness, duplicate, API, schema, or provider-comparison warnings were detected.",
+    "Warning": "Non-critical issues were detected, such as stale data, duplicates, or provider price differences above tolerance.",
+    "Fail": "Critical issues were detected, such as missing required fields, invalid numeric values, schema failures, or API failures/rate limits."
+  }
+}

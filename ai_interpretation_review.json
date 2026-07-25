@@ -1,0 +1,8 @@
+{
+  "draft_interpretation": "The monitored companies show current market data from multiple providers, while FRED macroeconomic indicators provide context for GDP, inflation, and unemployment. The current overall data-quality status is Warning. Business users should treat Warning or Fail results as signals to review missing values, stale observations, API failures, or provider price differences before using the data in dashboards, models, or investment analysis.",
+  "independent_review": [
+    "The interpretation is descriptive and should not be treated as investment advice.",
+    "Provider price differences may come from timing, delayed quotes, adjusted prices, or API limitations.",
+    "Macroeconomic indicators are updated less frequently than stock prices, so freshness thresholds differ by frequency."
+  ]
+}

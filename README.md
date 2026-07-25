@@ -1,153 +1,125 @@
-# West Matrix Local Sandbox
+# West Matrix Financial Data Quality Monitor
 
-This repository sets up a clean local Python sandbox for connecting to external financial and macroeconomic data sources, normalizing the raw API responses, and exporting standardized output files that can be consumed by downstream applications or AI models.
+This project extends the West Matrix sandbox into a reusable financial-data monitoring product. It collects market data for at least three public companies from Yahoo Finance and Alpha Vantage, collects GDP, CPI, and unemployment indicators from FRED, stores the results in a standardized schema, runs automated data-quality checks, and displays results in a Streamlit dashboard.
 
-The project uses only external public data sources and does not connect to any internal production database.
-
-## Project structure
+## Project Structure
 
 ```text
-westmatrix-sandbox/
-├── verify_connectivity.py          # Phase 1: API connectivity test
-├── data_standardization.py         # Phase 2: normalization + financial snapshot pipeline
-├── requirements.txt                # Python dependencies
-├── Dockerfile                      # Optional containerized run
-├── .env.example                    # Example environment variables, no real keys
-├── .gitignore                      # Prevents .env and virtual env files from being committed
-├── writeup.md                      # Brief 1-2 page project explanation
-└── output/
-    ├── standardized_data.json      # Sample standardized JSON output
-    ├── standardized_data.csv       # Sample standardized CSV output
-    ├── financial_snapshot.json     # Sample company + macro snapshot JSON
-    └── financial_snapshot.csv      # Sample company + macro snapshot CSV
+westmatrix_project3
+├── app.py
+├── run_pipeline.py
+├── config.example.json
+├── requirements.txt
+├── Dockerfile
+├── .env.example
+├── src/
+│   ├── fetchers.py
+│   ├── normalize.py
+│   ├── pipeline.py
+│   └── quality.py
+├── tests/
+│   └── test_quality.py
+├── output/
+│   ├── standardized_records.json
+│   ├── standardized_records.csv
+│   ├── quality_report.json
+│   ├── ai_interpretation_review.json
+│   └── sample_dashboard_latest.json
+└── docs/
+    ├── executive_summary.md
+    ├── demo_presentation.md
+    └── demo_script.md
 ```
 
-## Data sources
+## Standardized Schema
 
-The pipeline standardizes data from three external providers:
-
-1. **FRED**
-   - Gross Domestic Product (`GDP`)
-   - Consumer Price Index (`CPIAUCSL`)
-   - Unemployment Rate (`UNRATE`)
-2. **Yahoo Finance**
-   - Current stock price
-   - Previous close
-   - Market capitalization
-   - 52-week high and low
-3. **Alpha Vantage**
-   - Latest trading price
-   - Previous close
-   - Trading volume
-
-The sample financial snapshot uses **NVIDIA Corporation (`NVDA`)**.
-
-## Common JSON schema
-
-Each normalized observation uses this schema:
+Each record uses this shared structure:
 
 ```json
 {
-  "data_source": "FRED",
-  "timestamp": "2026-01-01",
-  "symbol": "GDP",
-  "metric_name": "Gross Domestic Product",
-  "metric_value": 31865.721,
-  "units": "Billions of Dollars, Seasonally Adjusted Annual Rate",
-  "frequency": "quarterly"
+  "data_source": "Yahoo Finance",
+  "timestamp": "2026-07-25T18:55:00+00:00",
+  "symbol": "NVDA",
+  "metric_name": "Current Price",
+  "metric_value": 171.3,
+  "units": "USD",
+  "frequency": "daily",
+  "provider_timestamp": "2026-07-24",
+  "status": "success",
+  "message": null
 }
 ```
 
-### Schema fields
-
-| Field | Description |
-|---|---|
-| `data_source` | Source provider, such as FRED, Yahoo Finance, or Alpha Vantage |
-| `timestamp` | Observation date or timestamp from the provider |
-| `symbol` | Stock ticker or economic series ID |
-| `metric_name` | Human-readable name of the metric |
-| `metric_value` | Numeric value after conversion |
-| `units` | Unit of measurement, such as USD or Percent |
-| `frequency` | Data frequency, such as daily, monthly, or quarterly |
-
-## Setup instructions
-
-Create and activate a local Python virtual environment:
+## Setup
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install --upgrade pip
 pip install -r requirements.txt
-```
-
-On Windows PowerShell:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-## Add API keys
-
-Copy the example environment file:
-
-```bash
 cp .env.example .env
 ```
 
-Then edit `.env` and add your own keys:
+Add your keys to `.env`:
 
 ```env
 FRED_API_KEY=your_fred_api_key_here
 ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key_here
 ```
 
-Do **not** commit `.env` to GitHub. The `.gitignore` file is included to prevent that.
+Do not upload `.env` to GitHub.
 
-## Run Phase 1: connectivity test
+## Run the Pipeline
 
-```bash
-python verify_connectivity.py
-```
-
-This prints a JSON status report showing whether FRED, Yahoo Finance, and Alpha Vantage are reachable.
-
-## Run Phase 2: data standardization and financial snapshot
+Default tickers are `NVDA`, `AAPL`, and `MSFT`.
 
 ```bash
-python data_standardization.py
+python run_pipeline.py
 ```
 
-This generates or refreshes the following files:
-
-```text
-output/standardized_data.json
-output/standardized_data.csv
-output/financial_snapshot.json
-output/financial_snapshot.csv
-```
-
-## Example outputs
-
-The repository includes sample output files in the `output/` folder. These files demonstrate the normalized schema and the NVIDIA financial snapshot format.
-
-## Optional Docker run
-
-Build the image:
+Run with a custom configuration:
 
 ```bash
-docker build -t westmatrix-sandbox .
+python run_pipeline.py --config config.example.json
 ```
 
-Run it with your `.env` file:
+## Run the Dashboard
 
 ```bash
-docker run --rm --env-file .env westmatrix-sandbox
+streamlit run app.py
 ```
 
-## Notes
+The dashboard includes an input field for changing tickers without editing Python source code.
 
-Yahoo Finance can sometimes return a temporary rate-limit error. The script catches this and continues with the other data sources when possible. FRED and Alpha Vantage require valid local API keys.
+## Run Tests
+
+```bash
+pytest
+```
+
+The test file covers numeric conversion, schema validation, missing values, invalid numeric values, stale dates, duplicates, provider price differences, and API failure handling.
+
+## Data-Quality Rules
+
+| Check | Rule | Status Impact |
+|---|---|---|
+| Missing or null values | Required schema fields must not be missing or null | Fail |
+| Duplicate records | Same source, symbol, metric, and observation date cannot repeat | Warning |
+| Invalid numeric values | Numeric fields must be parseable and non-negative for financial/economic metrics | Fail |
+| Stale dates | Daily market data should be recent; monthly and quarterly indicators use wider thresholds | Warning |
+| API failures/rate limits | Missing keys, failed requests, or rate limits are captured | Fail |
+| Provider differences | Yahoo and Alpha Vantage prices are compared against a tolerance | Warning |
+| Schema compliance | Required fields must exist in each output record | Fail |
+
+## Output Files
+
+| File | Purpose |
+|---|---|
+| `output/standardized_records.json` | Main JSON output with records, quality report, and interpretation |
+| `output/standardized_records.csv` | CSV version of standardized records |
+| `output/quality_report.json` | Data-quality results and Pass/Warning/Fail status |
+| `output/ai_interpretation_review.json` | AI-drafted interpretation and independent review notes |
+| `output/sample_dashboard_latest.json` | Sample dashboard input data |
+
+## Troubleshooting
+
+If FRED or Alpha Vantage returns `missing_api_key`, check that `.env` exists and contains the correct key names. If Yahoo Finance or Alpha Vantage returns a rate-limit message, wait and rerun the script. If the dashboard opens but shows sample data, click `Refresh Data` after configuring the API keys.

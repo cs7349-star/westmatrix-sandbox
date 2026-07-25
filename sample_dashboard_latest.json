@@ -1,0 +1,369 @@
+{
+  "metadata": {
+    "refresh_time_utc": "2026-07-25T18:55:00+00:00",
+    "tickers": [
+      "NVDA",
+      "AAPL",
+      "MSFT"
+    ],
+    "sample_output": true
+  },
+  "records": [
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "NVDA",
+      "metric_name": "Current Price",
+      "metric_value": 171.3,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "NVDA",
+      "metric_name": "Previous Close",
+      "metric_value": 170.9,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "NVDA",
+      "metric_name": "Market Cap",
+      "metric_value": 4210000000000.0,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "NVDA",
+      "metric_name": "52 Week High",
+      "metric_value": 174.25,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "NVDA",
+      "metric_name": "52 Week Low",
+      "metric_value": 86.62,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Alpha Vantage",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "NVDA",
+      "metric_name": "Current Price",
+      "metric_value": 171.05,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Alpha Vantage",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "NVDA",
+      "metric_name": "Previous Close",
+      "metric_value": 170.9,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "AAPL",
+      "metric_name": "Current Price",
+      "metric_value": 213.88,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "AAPL",
+      "metric_name": "Previous Close",
+      "metric_value": 213.76,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "AAPL",
+      "metric_name": "Market Cap",
+      "metric_value": 3260000000000.0,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "AAPL",
+      "metric_name": "52 Week High",
+      "metric_value": 260.1,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "AAPL",
+      "metric_name": "52 Week Low",
+      "metric_value": 169.21,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Alpha Vantage",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "AAPL",
+      "metric_name": "Current Price",
+      "metric_value": 214.1,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Alpha Vantage",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "AAPL",
+      "metric_name": "Previous Close",
+      "metric_value": 213.76,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "MSFT",
+      "metric_name": "Current Price",
+      "metric_value": 510.12,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "MSFT",
+      "metric_name": "Previous Close",
+      "metric_value": 508.45,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "MSFT",
+      "metric_name": "Market Cap",
+      "metric_value": 3790000000000.0,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "MSFT",
+      "metric_name": "52 Week High",
+      "metric_value": 512.34,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Yahoo Finance",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "MSFT",
+      "metric_name": "52 Week Low",
+      "metric_value": 344.79,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Alpha Vantage",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "MSFT",
+      "metric_name": "Current Price",
+      "metric_value": 509.7,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "Alpha Vantage",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "MSFT",
+      "metric_name": "Previous Close",
+      "metric_value": 508.45,
+      "units": "USD",
+      "frequency": "daily",
+      "provider_timestamp": "2026-07-24",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "FRED",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "GDP",
+      "metric_name": "Gross Domestic Product",
+      "metric_value": 29841.232,
+      "units": "Billions of Dollars",
+      "frequency": "quarterly",
+      "provider_timestamp": "2026-04-01",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "FRED",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "CPIAUCSL",
+      "metric_name": "Consumer Price Index",
+      "metric_value": 323.456,
+      "units": "Index 1982-1984=100",
+      "frequency": "monthly",
+      "provider_timestamp": "2026-06-01",
+      "status": "success",
+      "message": null
+    },
+    {
+      "data_source": "FRED",
+      "timestamp": "2026-07-25T18:55:00+00:00",
+      "symbol": "UNRATE",
+      "metric_name": "Unemployment Rate",
+      "metric_value": 4.1,
+      "units": "Percent",
+      "frequency": "monthly",
+      "provider_timestamp": "2026-06-01",
+      "status": "success",
+      "message": null
+    }
+  ],
+  "quality_report": {
+    "overall_status": "Warning",
+    "record_count": 24,
+    "issue_count": 1,
+    "issues": [
+      {
+        "symbol": "CPIAUCSL",
+        "issues": [
+          "provider_price_difference"
+        ],
+        "comparison": {
+          "yahoo_price": null,
+          "alpha_vantage_price": null,
+          "difference_pct": null,
+          "tolerance_pct": 2.0,
+          "status": "Warning"
+        }
+      }
+    ],
+    "provider_price_comparison": {
+      "NVDA": {
+        "yahoo_price": 171.3,
+        "alpha_vantage_price": 171.05,
+        "difference_pct": 0.14594279042615294,
+        "tolerance_pct": 2.0,
+        "status": "Pass"
+      },
+      "AAPL": {
+        "yahoo_price": 213.88,
+        "alpha_vantage_price": 214.1,
+        "difference_pct": 0.10286141761735498,
+        "tolerance_pct": 2.0,
+        "status": "Pass"
+      },
+      "MSFT": {
+        "yahoo_price": 510.12,
+        "alpha_vantage_price": 509.7,
+        "difference_pct": 0.0823335685721038,
+        "tolerance_pct": 2.0,
+        "status": "Pass"
+      },
+      "CPIAUCSL": {
+        "yahoo_price": null,
+        "alpha_vantage_price": null,
+        "difference_pct": null,
+        "tolerance_pct": 2.0,
+        "status": "Warning"
+      }
+    },
+    "status_by_source": {
+      "FRED": "Pass",
+      "Yahoo Finance": "Pass",
+      "Alpha Vantage": "Pass"
+    },
+    "rules": {
+      "Pass": "No required-field, numeric, freshness, duplicate, API, schema, or provider-comparison warnings were detected.",
+      "Warning": "Non-critical issues were detected, such as stale data, duplicates, or provider price differences above tolerance.",
+      "Fail": "Critical issues were detected, such as missing required fields, invalid numeric values, schema failures, or API failures/rate limits."
+    }
+  },
+  "interpretation": {
+    "draft_interpretation": "The monitored companies show current market data from multiple providers, while FRED macroeconomic indicators provide context for GDP, inflation, and unemployment. The current overall data-quality status is Warning. Business users should treat Warning or Fail results as signals to review missing values, stale observations, API failures, or provider price differences before using the data in dashboards, models, or investment analysis.",
+    "independent_review": [
+      "The interpretation is descriptive and should not be treated as investment advice.",
+      "Provider price differences may come from timing, delayed quotes, adjusted prices, or API limitations.",
+      "Macroeconomic indicators are updated less frequently than stock prices, so freshness thresholds differ by frequency."
+    ]
+  }
+}
