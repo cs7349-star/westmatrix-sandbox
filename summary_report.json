@@ -1,0 +1,10 @@
+{
+  "generated_at": "sample",
+  "symbol": "NVDA",
+  "providers": {
+    "FRED": {"checks": 0, "success_rate": 0.0, "average_response_time": null, "most_recent_successful_check": null},
+    "Yahoo Finance": {"checks": 0, "success_rate": 0.0, "average_response_time": null, "most_recent_successful_check": null},
+    "Alpha Vantage": {"checks": 0, "success_rate": 0.0, "average_response_time": null, "most_recent_successful_check": null}
+  },
+  "price_difference": null
+}
