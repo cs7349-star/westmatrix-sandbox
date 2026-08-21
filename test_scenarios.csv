@@ -1,0 +1,13 @@
+case_id,expected_change_type,ai_change_type,expected_control,ai_control,expected_impact,ai_impact,expected_human_review,ai_human_review
+T01,addition,addition,Customer Due Diligence / KYC,Customer Due Diligence / KYC,High,High,Yes,Yes
+T02,modification,modification,AML Transaction Monitoring,AML Transaction Monitoring,High,High,Yes,Yes
+T03,modification,modification,Regulatory Reporting,Regulatory Reporting,Medium,Medium,Yes,Yes
+T04,removal,removal,Records Retention,Records Retention,Low,Low,No,No
+T05,addition,addition,Incident Response / Customer Notification,Incident Response / Customer Notification,High,High,Yes,Yes
+T06,modification,modification,Fair Lending Monitoring,Fair Lending Monitoring,Medium,Medium,Yes,Yes
+T07,addition,addition,Privacy / Third-Party Data Sharing,Third-Party Risk Management,Medium,Low,Yes,No
+T08,no_change,modification,None,Policy Governance,Low,Medium,No,Yes
+T09,modification,modification,Model Risk Management,Model Risk Management,High,High,Yes,Yes
+T10,addition,addition,Capital Adequacy / Regulatory Reporting,Capital Adequacy / Regulatory Reporting,Medium,Medium,Yes,No
+T11,modification,modification,AML Records Retention,AML Records Retention,Medium,Medium,Yes,Yes
+T12,removal,removal,Sanctions Screening / Escalation,AML Transaction Monitoring,High,Medium,Yes,Yes

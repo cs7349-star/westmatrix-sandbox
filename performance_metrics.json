@@ -1,0 +1,11 @@
+{
+  "total_scenarios": 12,
+  "overall_accuracy": 0.7917,
+  "false_positive_rate": 0.0833,
+  "missed_change_rate": 0.0,
+  "control_mapping_accuracy": 0.75,
+  "human_review_accuracy": 0.75,
+  "pass_count": 9,
+  "warning_count": 1,
+  "fail_count": 2
+}

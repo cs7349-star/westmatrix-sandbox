@@ -1,0 +1,17 @@
+import json,pandas as pd,streamlit as st
+from pathlib import Path
+st.set_page_config(page_title="AI Regulatory Change Model Risk Dashboard",layout="wide")
+st.title("AI Regulatory Change Testing & Model Risk Dashboard")
+m=json.loads(Path("output/performance_metrics.json").read_text())
+r=pd.read_csv("output/evaluation_results.csv")
+c1,c2,c3,c4=st.columns(4)
+c1.metric("Overall Accuracy",f"{m['overall_accuracy']*100:.1f}%")
+c2.metric("False Positive Rate",f"{m['false_positive_rate']*100:.1f}%")
+c3.metric("Missed Change Rate",f"{m['missed_change_rate']*100:.1f}%")
+c4.metric("Control Mapping Accuracy",f"{m['control_mapping_accuracy']*100:.1f}%")
+st.subheader("Scenario Status")
+st.bar_chart(r["overall_status"].value_counts())
+st.subheader("Detailed Results")
+st.dataframe(r,use_container_width=True)
+st.subheader("Business Interpretation")
+st.write("The model performs well on explicit regulatory changes but shows higher risk on nuanced interpretations and cross-domain control mapping. Human review remains necessary for high-impact and ambiguous cases.")

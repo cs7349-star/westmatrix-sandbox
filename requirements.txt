@@ -1,5 +1,3 @@
-requests
-yfinance
-python-dotenv
+streamlit
 pandas
 pytest

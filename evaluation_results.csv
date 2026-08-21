@@ -1,0 +1,13 @@
+case_id,change_type_correct,control_mapping_correct,impact_correct,human_review_correct,false_positive,missed_change,case_accuracy,overall_status
+T01,True,True,True,True,False,False,1.0,Pass
+T02,True,True,True,True,False,False,1.0,Pass
+T03,True,True,True,True,False,False,1.0,Pass
+T04,True,True,True,True,False,False,1.0,Pass
+T05,True,True,True,True,False,False,1.0,Pass
+T06,True,True,True,True,False,False,1.0,Pass
+T07,True,False,False,False,False,False,0.25,Fail
+T08,False,False,False,False,True,False,0.0,Fail
+T09,True,True,True,True,False,False,1.0,Pass
+T10,True,True,True,False,False,False,0.75,Pass
+T11,True,True,True,True,False,False,1.0,Pass
+T12,True,False,False,True,False,False,0.5,Warning
